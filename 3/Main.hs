@@ -26,6 +26,6 @@ treesEncountered' :: [[Char]] -> Slope -> Int
 treesEncountered' xs (Slope r d) = fst . foldl' f (0,(0,0)) $ xs
   where m = length (xs !! 0)
         f (cnt, (ix, jx)) row = if jx == 0
-                              then (cnt + if row !! ix == '#' then 1 else 0,
-                                    ((ix + r) `mod` m, jx + d - 1))
-                              else (cnt, (ix, jx-1))
+                                then (cnt + if row !! ix == '#' then 1 else 0,
+                                      ((ix + r) `mod` m, jx + d - 1))
+                                else (cnt, (ix, jx-1))
